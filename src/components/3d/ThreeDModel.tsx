@@ -1,7 +1,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, useGLTF, PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 
 // A simple cube model for the portfolio
@@ -18,7 +18,7 @@ const Cube = ({ position = [0, 0, 0], color = '#9b87f5' }) => {
   return (
     <mesh ref={mesh} position={position as [number, number, number]}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={color} />
+      <meshStandardMaterial color={color as THREE.ColorRepresentation} />
     </mesh>
   );
 };
@@ -35,7 +35,7 @@ const Sphere = ({ position = [0, 0, 0], color = '#7E69AB', size = 0.5 }) => {
   return (
     <mesh ref={mesh} position={position as [number, number, number]}>
       <sphereGeometry args={[size, 32, 32]} />
-      <meshStandardMaterial color={color} />
+      <meshStandardMaterial color={color as THREE.ColorRepresentation} />
     </mesh>
   );
 };
@@ -53,7 +53,7 @@ const Torus = ({ position = [0, 0, 0], color = '#D6BCFA' }) => {
   return (
     <mesh ref={mesh} position={position as [number, number, number]}>
       <torusGeometry args={[0.7, 0.2, 16, 32]} />
-      <meshStandardMaterial color={color} />
+      <meshStandardMaterial color={color as THREE.ColorRepresentation} />
     </mesh>
   );
 };
@@ -79,7 +79,7 @@ const MouseFollower = ({ children }: { children: React.ReactNode }) => {
 export const ThreeDScene = ({ modelType = 'cube', cameraPosition = [0, 0, 5] }) => {
   return (
     <Canvas className="h-full w-full">
-      <PerspectiveCamera makeDefault position={cameraPosition} fov={50} />
+      <PerspectiveCamera makeDefault position={cameraPosition as [number, number, number]} fov={50} />
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} castShadow />
       <pointLight position={[-10, -10, -10]} />
