@@ -16,6 +16,7 @@ const projects = [
       "Cloudinary",
       "React Query",
       "Clerk",
+      "Zustand",
     ],
     image:
       "https://res.cloudinary.com/dzt95xw2d/image/upload/v1746369695/IMG_5651_kgrwyl.jpg",
@@ -32,6 +33,7 @@ const projects = [
       "MongoDB",
       "Tailwind CSS",
       "React Query",
+      "Zustand",
     ],
     image:
       "https://res.cloudinary.com/dzt95xw2d/image/upload/v1746192872/posts/1746192871190_IMG_5637.jpg",
