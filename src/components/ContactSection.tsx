@@ -126,7 +126,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="text-lg font-medium">Phone</h4>
                     <a
-                      href="tel:+11234567890"
+                      href="tel:+918074125914"
                       className="text-portfolio-primary hover:underline"
                     >
                       +91 8074125914
