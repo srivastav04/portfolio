@@ -39,6 +39,24 @@ const projects = [
       "https://res.cloudinary.com/dzt95xw2d/image/upload/v1746192872/posts/1746192871190_IMG_5637.jpg",
     link: "https://type-wise.vercel.app/",
   },
+  {
+    id: 3,
+    title: "Trndy",
+    description:
+      "Trndy is a full-stack fashion e-commerce website built using a microservices architecture, featuring separate services for authentication, product management, cart, and orders. It’s designed with React, Tailwind CSS, Node.js, MongoDB, and Docker to explore scalable backend development and service-oriented design.",
+    technologies: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Tailwind CSS",
+      "React Query",
+      "Zustand",
+      "Docker",
+    ],
+    image:
+      "https://res-console.cloudinary.com/dzt95xw2d/thumbnails/v1/image/upload/v1747920322/U2NyZWVuc2hvdF8yMDI1LTA1LTIyXzE4NTQ1MV95OHR4aWw=/drilldown",
+    link: "https://trndy.vercel.app/",
+  },
 ];
 
 const ProjectsSection = () => {
