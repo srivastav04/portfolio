@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import StoriiUpdates from "./components/Storii";
 import { Type } from "lucide-react";
 import TypeWiseUpdates from "./components/Typewise";
+import TrndyUpdates from "./components/Trndy";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/storii" element={<StoriiUpdates />} />
           <Route path="/typewise" element={<TypeWiseUpdates />} />
+          <Route path="/trndy" element={<TrndyUpdates />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -58,7 +58,7 @@ const projects = [
     ],
     image:
       "https://res.cloudinary.com/dzt95xw2d/image/upload/v1755410460/Screenshot_2025-08-17_113103_q9znym.png",
-    link: "https://trndy.vercel.app/",
+    link: "/trndy",
   },
 ];
 
