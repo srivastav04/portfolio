@@ -1,6 +1,11 @@
-import { useEffect, useRef } from "react";
-import ThreeDScene from "@/components/3d/ThreeDModel";
 import { useInView } from "react-intersection-observer";
+import {
+  SiNextdotjs,
+  SiNestjs,
+  SiTypescript,
+  SiPrisma,
+  SiMongodb,
+} from "react-icons/si";
 
 const AboutSection = () => {
   const { ref, inView } = useInView({
@@ -15,6 +20,7 @@ const AboutSection = () => {
           <h2 className="section-title gradient-text">About Me</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-center">
+            {/* Left Side - Text */}
             <div
               className={`transition-all duration-700 delay-100 ${
                 inView
@@ -23,58 +29,58 @@ const AboutSection = () => {
               }`}
             >
               <p className="text-lg mb-6">
-                Hello! Srivastav, a passionate full-stack developer with
-                expertise in creating dynamic and responsive web applications. I
-                specialize in modern JavaScript frameworks like React, along
-                with backend technologies such as Node.js and databases
-                including MongoDB.
+                Hello I’m Srivastav, a passionate full-stack developer who
+                builds modern, production-ready web applications with strong
+                attention to design, performance, and user experience. I combine
+                a frontend-first mindset with robust backend engineering. My
+                day-to-day work centers on JavaScript/TypeScript
+                ecosystems—shipping fast with React / Next.js on the front end
+                and building solid server logic with Node.js, NestJS, and Prisma
+                on the back end.
               </p>
               <p className="text-lg mb-6">
-                With a strong background in both design and development, I bring
-                a unique perspective to every project, focusing on creating
-                seamless user experiences that are both beautiful and
-                functional.
+                I enjoy turning product ideas into polished, maintainable code:
+                designing intuitive UIs, shaping the API surface, integrating
+                authentication and media services, and optimizing data flows so
+                apps feel snappy. My approach balances practical engineering
+                with a designer’s eye for clarity and usability. Over time I’ve
+                leaned into performance improvements (Redis caching), media
+                optimization, and developer DX (TypeScript + Prisma), which
+                makes large features easier to build and maintain.
               </p>
-
-              {/* <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-lg p-4">
-                  <h3 className="text-xl font-semibold mb-2 text-portfolio-primary">
-                    4+
-                  </h3>
-                  <p className="text-gray-300">Years of Experience</p>
-                </div>
-                <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-lg p-4">
-                  <h3 className="text-xl font-semibold mb-2 text-portfolio-primary">
-                    50+
-                  </h3>
-                  <p className="text-gray-300">Projects Completed</p>
-                </div>
-                <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-lg p-4">
-                  <h3 className="text-xl font-semibold mb-2 text-portfolio-primary">
-                    15+
-                  </h3>
-                  <p className="text-gray-300">Happy Clients</p>
-                </div>
-                <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-lg p-4">
-                  <h3 className="text-xl font-semibold mb-2 text-portfolio-primary">
-                    10+
-                  </h3>
-                  <p className="text-gray-300">Open Source Contributions</p>
-                </div>
-              </div> */}
             </div>
 
+            {/* Right Side - Tech Stack */}
             <div
-              className={`h-[400px] transition-all duration-700 delay-300 ${
+              className={`transition-all duration-700 delay-300 ${
                 inView
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-10"
               }`}
             >
-              <div className="relative h-full w-full">
-                <div className="absolute inset-0 bg-gradient-to-r from-portfolio-primary/20 to-portfolio-secondary/20 rounded-lg opacity-40" />
-                <div className="h-full w-full">
-                  <ThreeDScene modelType="sphere" />
+              <h3 className="text-2xl font-semibold mb-6 gradient-text">
+                Tech Stack
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
+                  <SiNextdotjs className="text-4xl text-white mb-3" />
+                  <p className="text-gray-300">Next.js</p>
+                </div>
+                <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
+                  <SiNestjs className="text-4xl text-red-500 mb-3" />
+                  <p className="text-gray-300">NestJS</p>
+                </div>
+                <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
+                  <SiTypescript className="text-4xl text-blue-500 mb-3" />
+                  <p className="text-gray-300">TypeScript</p>
+                </div>
+                <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
+                  <SiPrisma className="text-4xl text-sky-400 mb-3" />
+                  <p className="text-gray-300">Prisma</p>
+                </div>
+                <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
+                  <SiMongodb className="text-4xl text-green-500 mb-3" />
+                  <p className="text-gray-300">MongoDB</p>
                 </div>
               </div>
             </div>

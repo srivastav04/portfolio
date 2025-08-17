@@ -43,8 +43,7 @@ const Navigation = () => {
   const links = [
     { id: "hero", label: "Home" },
     { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "additional-skills", label: "Tech Stack" },
+    { id: "additional-skills", label: "Skills" },
     { id: "projects", label: "Projects" },
     { id: "experience", label: "Experience" },
     { id: "contact", label: "Contact" },

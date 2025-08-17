@@ -1,26 +1,5 @@
 import { useInView } from "react-intersection-observer";
 
-// const experienceData = [
-//   {
-//     title: "Senior Frontend Developer",
-//     company: "Tech Innovations Inc.",
-//     period: "Jan 2022 - Present",
-//     description: "Leading the frontend development team in building responsive web applications. Implemented component libraries and improved performance by 40%.",
-//   },
-//   {
-//     title: "Full Stack Developer",
-//     company: "Digital Solutions Co.",
-//     period: "Mar 2019 - Dec 2021",
-//     description: "Developed and maintained full-stack applications using React and Node.js. Integrated payment gateways and improved database efficiency.",
-//   },
-//   {
-//     title: "Junior Web Developer",
-//     company: "WebCraft Studios",
-//     period: "Jun 2017 - Feb 2019",
-//     description: "Created responsive websites and implemented UI designs. Collaborated with designers to ensure pixel-perfect implementations.",
-//   }
-// ];
-
 const educationData = [
   {
     degree: "B.Tech in Computer Science",

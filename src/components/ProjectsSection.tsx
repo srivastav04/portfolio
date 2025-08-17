@@ -1,43 +1,46 @@
 import { useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
+
 import ThreeDScene from "@/components/3d/ThreeDModel";
 
 const projects = [
   {
     id: 1,
-    title: "Postly",
+    title: "Storii",
     description:
-      "Postly is a full-stack social media platform where users can share posts, like content, and comment in real time.",
+      "Storii is a full-stack social media platform where users can share posts, like content, and comment in real time.",
     technologies: [
-      "React",
-      "Node.js",
+      "Nextjs",
+      "Nestjs",
       "MongoDB",
-      "Redis",
-      "Cloudinary",
+      "ImageKit",
+      "Prisma",
       "React Query",
       "Clerk",
       "Zustand",
+      "Hero UI",
     ],
     image:
-      "https://res.cloudinary.com/dzt95xw2d/image/upload/v1746369695/IMG_5651_kgrwyl.jpg",
-    link: "https://postly-dun.vercel.app/",
+      "https://res.cloudinary.com/dzt95xw2d/image/upload/v1755410268/Screenshot_2025-08-17_112756_todxef.png",
+    link: "/storii",
   },
   {
     id: 2,
     title: "TypeWise",
     description:
-      "TypeWise is a visually engaging typing practice website for desktop users. It features a full MERN stack- React,Node.js,Express and MongoDB along with React Query.",
+      "TypeWise is a visually engaging typing practice website for desktop users. It features a fullstack project built with modern technologies, including Nextjs, Nestjs, MongoDB, Shadcn UI, React Query, and Zustand.",
     technologies: [
-      "React",
-      "Node.js",
+      "Nextjs",
+      "Nestjs",
       "MongoDB",
-      "Tailwind CSS",
+      "Shadcn UI",
       "React Query",
       "Zustand",
     ],
     image:
       "https://res.cloudinary.com/dzt95xw2d/image/upload/v1746192872/posts/1746192871190_IMG_5637.jpg",
-    link: "https://type-wise.vercel.app/",
+    link: "/typewise",
   },
   {
     id: 3,
@@ -54,7 +57,7 @@ const projects = [
       "Docker",
     ],
     image:
-      "https://res-console.cloudinary.com/dzt95xw2d/thumbnails/v1/image/upload/v1747920322/U2NyZWVuc2hvdF8yMDI1LTA1LTIyXzE4NTQ1MV95OHR4aWw=/drilldown",
+      "https://res.cloudinary.com/dzt95xw2d/image/upload/v1755410460/Screenshot_2025-08-17_113103_q9znym.png",
     link: "https://trndy.vercel.app/",
   },
 ];
@@ -86,7 +89,7 @@ const ProjectsSection = () => {
                 onMouseEnter={() => setActiveProject(project.id)}
                 onMouseLeave={() => setActiveProject(null)}
               >
-                <div className="relative overflow-hidden rounded-lg h-48 mb-4">
+                <div className="relative overflow-hidden rounded-lg h-96 mb-4">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -97,14 +100,12 @@ const ProjectsSection = () => {
                       activeProject === project.id ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to={project.link}
                       className="bg-portfolio-primary hover:bg-portfolio-secondary text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300"
                     >
                       View Project
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>

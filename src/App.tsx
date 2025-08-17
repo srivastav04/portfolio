@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import StoriiUpdates from "./components/Storii";
+import { Type } from "lucide-react";
+import TypeWiseUpdates from "./components/Typewise";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +19,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/storii" element={<StoriiUpdates />} />
+          <Route path="/typewise" element={<TypeWiseUpdates />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
