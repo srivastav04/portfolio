@@ -7,14 +7,9 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Make navbar sticky after scrolling
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      if (window.scrollY > 50) setIsScrolled(true);
+      else setIsScrolled(false);
 
-      // Update active section based on scroll position
       const sections = document.querySelectorAll(".section");
       sections.forEach((section) => {
         const sectionTop = section.getBoundingClientRect().top;
@@ -29,14 +24,32 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // lock body scroll and handle escape key
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+    if (isMenuOpen) window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 80,
-        behavior: "smooth",
-      });
+      // close menu first for better UX, then scroll
       setIsMenuOpen(false);
+      // small timeout to ensure menu closed (optional)
+      setTimeout(() => {
+        window.scrollTo({
+          top: section.offsetTop - 80,
+          behavior: "smooth",
+        });
+      }, 120);
     }
   };
 
@@ -80,9 +93,11 @@ const Navigation = () => {
         {/* Mobile Navigation Toggle */}
         <button
           className="md:hidden text-white"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setIsMenuOpen((s) => !s)}
+          aria-label="Open menu"
         >
           {isMenuOpen ? (
+            // close icon
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -98,6 +113,7 @@ const Navigation = () => {
               />
             </svg>
           ) : (
+            // menu icon
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -116,27 +132,70 @@ const Navigation = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-portfolio-dark/95 z-40 flex flex-col items-center justify-center">
-          <div className="space-y-6 text-center">
-            {links.map((link) => (
-              <div key={link.id}>
-                <button
-                  onClick={() => scrollToSection(link.id)}
-                  className={`text-xl ${
-                    activeSection === link.id
-                      ? "text-portfolio-primary font-bold"
-                      : "text-gray-300 hover:text-white"
-                  } transition-colors`}
-                >
-                  {link.label}
-                </button>
-              </div>
-            ))}
+      {/* Side-drawer + overlay (mobile) */}
+      <div
+        // wrapper is always in DOM on mobile but non-interactive when closed
+        className={`md:hidden fixed inset-0 z-50 pointer-events-${
+          isMenuOpen ? "auto" : "none"
+        }`}
+        aria-hidden={!isMenuOpen}
+      >
+        {/* overlay */}
+        <div
+          className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${
+            isMenuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setIsMenuOpen(false)}
+        />
+
+        {/* side panel */}
+        <aside
+          className={`fixed top-0 right-0 h-full w-4/5 max-w-xs bg-portfolio-dark/95 backdrop-blur-sm p-6 transform transition-transform duration-300 ease-out
+            ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="flex items-center justify-between mb-8">
+            <div className="text-lg font-semibold">Menu</div>
+            <button
+              className="text-white hover:text-portfolio-primary"
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
           </div>
-        </div>
-      )}
+
+          <nav className="flex flex-col space-y-6">
+            {links.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className={`text-lg text-left bg-black p-2 ${
+                  activeSection === link.id
+                    ? "text-portfolio-primary font-bold"
+                    : "text-gray-300 hover:text-white"
+                }`}
+              >
+                {link.label}
+              </button>
+            ))}
+          </nav>
+        </aside>
+      </div>
     </nav>
   );
 };

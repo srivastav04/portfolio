@@ -2,11 +2,10 @@ import { useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 
-import ThreeDScene from "@/components/3d/ThreeDModel";
-
 const projects = [
   {
     id: 1,
+    deployed: true,
     title: "Storii",
     description:
       "Storii is a full-stack social media platform where users can share posts, like content, and comment in real time.",
@@ -27,6 +26,7 @@ const projects = [
   },
   {
     id: 2,
+    deployed: true,
     title: "TypeWise",
     description:
       "TypeWise is a visually engaging typing practice website for desktop users. It features a fullstack project built with modern technologies, including Nextjs, Nestjs, MongoDB, Shadcn UI, React Query, and Zustand.",
@@ -44,7 +44,9 @@ const projects = [
   },
   {
     id: 3,
+    deployed: true,
     title: "Trndy",
+
     description:
       "Trndy is a full-stack fashion e-commerce website built using a microservices architecture, featuring separate services for authentication, product management, cart, and orders. It’s designed with React, Tailwind CSS, Node.js, MongoDB, and Docker to explore scalable backend development and service-oriented design.",
     technologies: [
@@ -59,6 +61,17 @@ const projects = [
     image:
       "https://res.cloudinary.com/dzt95xw2d/image/upload/v1755410460/Screenshot_2025-08-17_113103_q9znym.png",
     link: "/trndy",
+  },
+  {
+    id: 4,
+    deployed: false,
+    title: "AskMe (SOON TO BE DEPLOYED)",
+    description:
+      "I developed AskMe, a stateless RAG-based chatbot that answers professional and personal questions grounded in custom-provided content. Built with Next.js, Express.js, and Pinecone for efficient vector retrieval, it leverages the Groq API (LLaMA 3 70B) for fast, context-aware response generation.",
+    technologies: ["Nextjs", "Node.js", "Pinecone", "LangChain"],
+    image:
+      "https://res.cloudinary.com/dzt95xw2d/image/upload/v1760066394/askme_nmitvo.png",
+    link: "https://github.com/srivastav04/RagBot",
   },
 ];
 
@@ -100,12 +113,25 @@ const ProjectsSection = () => {
                       activeProject === project.id ? "opacity-100" : "opacity-0"
                     }`}
                   >
-                    <Link
-                      to={project.link}
-                      className="bg-portfolio-primary hover:bg-portfolio-secondary text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300"
-                    >
-                      View Project
-                    </Link>
+                    {project.deployed ? (
+                      <Link
+                        to={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-portfolio-light font-semibold hover:underline"
+                      >
+                        View Project
+                      </Link>
+                    ) : (
+                      <a
+                        target="_blank"
+                        href={project.link}
+                        rel="noopener noreferrer"
+                        className="text-portfolio-light font-semibold hover:underline"
+                      >
+                        View Project
+                      </a>
+                    )}
                   </div>
                 </div>
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>

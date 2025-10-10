@@ -1,7 +1,13 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { FiCheckCircle, FiCircle, FiExternalLink } from "react-icons/fi";
+import {
+  FiCheckCircle,
+  FiCircle,
+  FiExternalLink,
+  FiArrowLeft,
+} from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 const updates = [
   {
@@ -83,13 +89,31 @@ function StatusBadge({ status }: { status: string }) {
 }
 
 export default function StoriiUpdates() {
+  const navigate = useNavigate();
   return (
-    <section className="min-h-screen flex flex-col items-start justify-center px-6 py-20">
-      <h2 className="section-title text-4xl font-extrabold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-pink-300">
+    <section className="min-h-screen flex flex-col items-start justify-center lg:px-6 px-2 py-20 relative">
+      {/* 🔙 Back Button */}
+      <motion.button
+        whileHover={{ x: -3, scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        onClick={() => {
+          if (window.history.length > 1) {
+            navigate(-1);
+          } else {
+            navigate("/");
+          }
+        }}
+        className="absolute top-6 left-6 flex items-center gap-2 text-gray-300 hover:text-indigo-300 transition-colors duration-200 font-medium"
+      >
+        <FiArrowLeft className="w-5 h-5 " />
+        Back
+      </motion.button>
+
+      <h2 className="section-title text-4xl font-extrabold mb-8 mt-8 bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-pink-300">
         Storii — Project Evolution
       </h2>
 
-      <div className=" w-full">
+      <div className="w-full">
         {updates.map((update, i) => (
           <motion.article
             key={update.title}
@@ -101,10 +125,10 @@ export default function StoriiUpdates() {
               boxShadow: "0 20px 40px rgba(2,6,23,0.6)",
               scale: 1.01,
             }}
-            className="my-8 relative bg-gradient-to-br from-gray-900/70 to-gray-800/60 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 shadow-md transform transition-all duration-300"
+            className="my-8 relative bg-gradient-to-br from-gray-900/70 to-gray-800/60 backdrop-blur-sm border border-gray-800 rounded-2xl p-4 lg:p-8 shadow-md transform transition-all duration-300"
           >
             <div className="flex items-start justify-between gap-4">
-              <div className="flex-1 pr-4">
+              <div className="flex-1 lg:pr-4">
                 <h3 className="text-2xl md:text-2xl font-semibold mb-2 tracking-tight">
                   {update.title}
                 </h3>
@@ -126,6 +150,7 @@ export default function StoriiUpdates() {
                 </div>
               </div>
             </div>
+
             <div className="w-full flex justify-between">
               <div className="mt-6 pt-4 border-t border-gray-800/40">
                 <h4 className="text-xl font-semibold text-gray-200 mb-3">
@@ -139,13 +164,14 @@ export default function StoriiUpdates() {
                   ))}
                 </ul>
               </div>
+
               {update.link && (
                 <div className="flex items-end">
                   <a
                     href={update.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-3 inline-flex items-center gap-2  px-3 py-1 rounded-md ring-1 ring-white"
+                    className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-md ring-1 ring-white"
                   >
                     Visit
                     <FiExternalLink className="w-4 h-4" />
