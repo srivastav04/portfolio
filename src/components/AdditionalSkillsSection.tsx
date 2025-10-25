@@ -20,6 +20,7 @@ import {
   SiClerk,
   SiKubernetes,
 } from "react-icons/si";
+import { GiPineTree } from "react-icons/gi";
 import { FaNodeJs } from "react-icons/fa";
 
 const techSkills = [
@@ -117,6 +118,12 @@ const techSkills = [
     name: "Kubetnates",
     isNew: true,
     Icon: SiKubernetes,
+    color: "#3178C6",
+  },
+  {
+    name: "Pinecone",
+    isNew: true,
+    Icon: GiPineTree,
     color: "#3178C6",
   },
 ];
