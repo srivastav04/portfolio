@@ -68,13 +68,13 @@ const projects = [
     title: "CreateAI",
     description:
       "An AI-powered generator that creates responsive React components with built-in dark/light mode, previews across mobile, tablet, and desktop, uses react-icons for icons and dynamic imports for optimal load time.",
-    technologies: ["Vite", "Node.js", "GROQ API", "Tailwind CSS"],
+    technologies: ["Vite", "GROQ API", "Tailwind CSS", "FastAPI"],
     image:
-      "https://res.cloudinary.com/dzt95xw2d/image/upload/v1760066394/askme_nmitvo.png",
+      "https://res.cloudinary.com/dzt95xw2d/image/upload/v1761402266/Screenshot_2025-10-25_195347_yxcfkl.png",
     link: "/createai",
   },
   {
-    id: 4,
+    id: 5,
     deployed: false,
     title: "AskMe (SOON TO BE DEPLOYED)",
     description:

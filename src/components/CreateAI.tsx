@@ -12,11 +12,19 @@ import { useNavigate } from "react-router-dom";
 const updates = [
   {
     title: "Create.AI",
-    techStack: ["Node.js", "Vite", "Tailwind", "GROQ API"],
+    techStack: ["FastAPI", "Vite", "Tailwind", "GROQ API"],
     status: "active",
     link: "https://create-ai-xi.vercel.app",
-    description:
-      "Create AI is an intelligent, nextgeneration tool designed to automatically generate responsive React components using the power of AI. Built with a robust and modern tech stack Vite, Node.js, and the GROQ API (OpenAI 120B) the system leverages advanced language models to understand developer prompts and generate high quality, production ready React components in seconds.Each generated component is fully responsive, adapting gracefully to mobile, tablet, and desktop layouts without additional manual tweaking. The platform features an integrated live preview environment that enables developers to test and visualize component behavior across all screen sizes simultaneously, ensuring design consistency and accessibility.Create AI also provides seamless theme adaptability, offering both light and dark modes with smooth transitions. The generated components come pre configured with react-icons, allowing for effortless integration of scalable vector icons that align with modern UI standards.",
+    description: `
+    Create AI is an advanced, next-generation platform that leverages artificial intelligence to automatically generate responsive React components from natural language prompts. It redefines the modern front-end development workflow by combining AI-driven creativity with robust engineering, allowing developers to move from concept to functional, production-ready UI components in just seconds.
+
+The platform is built with a modern and scalable technology stack that integrates Vite on the frontend, FastAPI on the backend, and the GROQ API powered by OpenAI’s 120-billion parameter model. This combination ensures exceptional performance, intelligent language understanding, and efficient code generation that adheres to current industry standards.
+
+At its core, Create AI interprets the developer’s intent from a textual description and translates it into optimized React component code. Each generated component follows best practices in modularity, reusability, and responsiveness, adapting gracefully to mobile, tablet, and desktop layouts. By utilizing advanced AI pattern recognition, the system ensures visual and functional consistency across different screen sizes without requiring manual CSS adjustments or additional breakpoints.
+
+The backend, powered by FastAPI, provides a secure and high-performance environment for handling user interactions, prompt processing, and AI requests. Unlike traditional Node.js-based systems, FastAPI enables asynchronous request handling, delivering faster response times and efficient resource utilization. The backend also incorporates a token-based user identification mechanism, allowing the system to associate each user with their previous requests. This persistent context enables Create AI to deliver a personalized experience, where subsequent component generations can reflect prior design preferences or structural choices.
+
+Create AI also features an integrated live preview environment, enabling developers to instantly visualize and interact with the generated components. This environment simulates multiple device breakpoints and display modes, ensuring that each component meets modern accessibility and usability standards before being exported or integrated into larger projects. Developers can easily inspect code, modify design tokens, or fine-tune properties within the same interface, creating a seamless development feedback loop.`,
     keyFeatures: [
       "Responsive by default Generated components automatically adapt to mobile, tablet and desktop viewports, ensuring a fluid UI across devices.",
       "Light & Dark theme toggle Out of the box support for both themes, allowing end-users or developers to switch modes seamlessly.",

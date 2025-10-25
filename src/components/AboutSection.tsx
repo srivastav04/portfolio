@@ -30,16 +30,15 @@ const AboutSection = () => {
             >
               <p className="text-lg mb-6">
                 Hello I’m Srivastav, a passionate full-stack developer who
-                builds modern, production-ready web applications with strong
+                builds modern, production ready web applications with strong
                 attention to design, performance, and user experience. I combine
-                a frontend-first mindset with robust backend engineering. My
-                day-to-day work centers on JavaScript/TypeScript
-                ecosystems—shipping fast with React / Next.js on the front end
-                and building solid server logic with Node.js, NestJS, and Prisma
-                on the back end.
+                a frontend-first mindset with robust backend engineering. My day
+                to day work centers on JavaScript/TypeScript ecosystems shipping
+                fast with React / Next.js on the front end and building solid
+                server logic with Node.js, NestJS, and Prisma on the back end.
               </p>
               <p className="text-lg mb-6">
-                I enjoy turning product ideas into polished, maintainable code:
+                I enjoy turning product ideas into polished, maintainable code.
                 designing intuitive UIs, shaping the API surface, integrating
                 authentication and media services, and optimizing data flows so
                 apps feel snappy. My approach balances practical engineering

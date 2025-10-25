@@ -19,6 +19,7 @@ import {
   SiTypescript,
   SiClerk,
   SiKubernetes,
+  SiFastapi,
 } from "react-icons/si";
 import { GiPineTree } from "react-icons/gi";
 import { FaNodeJs } from "react-icons/fa";
@@ -126,6 +127,12 @@ const techSkills = [
     Icon: GiPineTree,
     color: "#3178C6",
   },
+  {
+    name: "FastAPI",
+    isNew: true,
+    Icon: SiFastapi,
+    color: "#47A248",
+  },
 ];
 
 export default function AdditionalSkillsSection() {
@@ -141,7 +148,7 @@ export default function AdditionalSkillsSection() {
 
           <p className="mt-3 text-gray-300 max-w-2xl">
             A curated set of libraries, services and platforms I use across my
-            projects. Hover or tap a card to reveal more — colors match each
+            projects. Hover or tap a card to reveal more colors match each
             tool's brand for quick recognition.
           </p>
 
