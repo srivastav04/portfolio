@@ -73,17 +73,17 @@ const projects = [
       "https://res.cloudinary.com/dzt95xw2d/image/upload/v1761402266/Screenshot_2025-10-25_195347_yxcfkl.png",
     link: "/createai",
   },
-  {
-    id: 5,
-    deployed: false,
-    title: "AskMe (SOON TO BE DEPLOYED)",
-    description:
-      "I developed AskMe, a stateless RAG-based chatbot that answers professional and personal questions grounded in custom-provided content. Built with Next.js, Express.js, and Pinecone for efficient vector retrieval, it leverages the Groq API (LLaMA 3 70B) for fast, context-aware response generation.",
-    technologies: ["Nextjs", "Node.js", "Pinecone", "LangChain"],
-    image:
-      "https://res.cloudinary.com/dzt95xw2d/image/upload/v1760066394/askme_nmitvo.png",
-    link: "https://github.com/srivastav04/RagBot",
-  },
+  // {
+  //   id: 5,
+  //   deployed: false,
+  //   title: "AskMe (SOON TO BE DEPLOYED)",
+  //   description:
+  //     "I developed AskMe, a stateless RAG-based chatbot that answers professional and personal questions grounded in custom-provided content. Built with Next.js, Express.js, and Pinecone for efficient vector retrieval, it leverages the Groq API (LLaMA 3 70B) for fast, context-aware response generation.",
+  //   technologies: ["Nextjs", "Node.js", "Pinecone", "LangChain"],
+  //   image:
+  //     "https://res.cloudinary.com/dzt95xw2d/image/upload/v1760066394/askme_nmitvo.png",
+  //   link: "https://github.com/srivastav04/RagBot",
+  // },
 ];
 
 const ProjectsSection = () => {
