@@ -10,6 +10,7 @@ import { Type } from "lucide-react";
 import TypeWiseUpdates from "./components/Typewise";
 import TrndyUpdates from "./components/Trndy";
 import CreateAI from "./components/CreateAI";
+import AskMe from "./components/AskMe";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <Route path="/typewise" element={<TypeWiseUpdates />} />
           <Route path="/trndy" element={<TrndyUpdates />} />
           <Route path="/createai" element={<CreateAI />} />
+          <Route path="/askme" element={<AskMe />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
