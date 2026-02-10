@@ -28,29 +28,39 @@ const ExperienceSection = () => {
     triggerOnce: false,
   });
 
+  const experienceData = [
+    {
+      title: "Software Engineer Intern",
+      company: "Neumeric Technologies Private Limited",
+      period: "Dec 2025 - Mar 2026",
+      description:
+        "Worked on a project to create a website for a client using React Native. ",
+    },
+  ];
   return (
     <section
       id="experience"
       className="section bg-portfolio-dark relative py-20"
     >
       <div className="section-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* <div className="smooth-scroll-section mb-16" ref={expRef}>
+        <div className="smooth-scroll-section mb-16" ref={expRef}>
           <h2 className="section-title gradient-text">Experience</h2>
-          
+
           <div className="mt-12 relative">
-          
             <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-portfolio-primary/40" />
-            
+
             {experienceData.map((item, index) => (
-              <div 
-                key={index} 
-                className={`flex flex-col lg:flex-row items-center mb-12 transition-all duration-700 ${expInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              <div
+                key={index}
+                className={`flex flex-col lg:flex-row items-center mb-12 transition-all duration-700 ${expInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
                 <div className="lg:w-1/2 lg:pr-12 lg:text-right mb-6 lg:mb-0">
                   {index % 2 === 0 ? (
                     <>
-                      <h3 className="text-xl font-bold text-portfolio-primary">{item.title}</h3>
+                      <h3 className="text-xl font-bold text-portfolio-primary">
+                        {item.title}
+                      </h3>
                       <p className="text-lg font-medium">{item.company}</p>
                       <p className="text-gray-400">{item.period}</p>
                     </>
@@ -60,16 +70,17 @@ const ExperienceSection = () => {
                     </div>
                   )}
                 </div>
-                
-  
+
                 <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 w-5 h-5 rounded-full border-4 border-portfolio-dark bg-portfolio-primary z-10" />
-                
+
                 <div className="lg:w-1/2 lg:pl-12">
                   {index % 2 === 0 ? (
                     <p className="text-gray-300">{item.description}</p>
                   ) : (
                     <>
-                      <h3 className="text-xl font-bold text-portfolio-primary">{item.title}</h3>
+                      <h3 className="text-xl font-bold text-portfolio-primary">
+                        {item.title}
+                      </h3>
                       <p className="text-lg font-medium">{item.company}</p>
                       <p className="text-gray-400">{item.period}</p>
                       <div className="lg:hidden mt-3">
@@ -81,9 +92,9 @@ const ExperienceSection = () => {
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
 
-        <div className="smooth-scroll-section" ref={eduRef}>
+        {/* <div className="smooth-scroll-section" ref={eduRef}>
           <h2 className="section-title gradient-text">Education</h2>
 
           <div className="mt-12 grid gap-8">
@@ -108,7 +119,7 @@ const ExperienceSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

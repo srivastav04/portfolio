@@ -11,6 +11,7 @@ import TypeWiseUpdates from "./components/Typewise";
 import TrndyUpdates from "./components/Trndy";
 import CreateAI from "./components/CreateAI";
 import AskMe from "./components/AskMe";
+import Backend from "./components/Backend";
 
 const queryClient = new QueryClient();
 
@@ -27,7 +28,8 @@ const App = () => (
           <Route path="/trndy" element={<TrndyUpdates />} />
           <Route path="/createai" element={<CreateAI />} />
           <Route path="/askme" element={<AskMe />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/askme" element={<AskMe />} />
+          <Route path="/backend" element={<Backend />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

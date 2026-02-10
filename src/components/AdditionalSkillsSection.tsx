@@ -20,6 +20,8 @@ import {
   SiClerk,
   SiKubernetes,
   SiFastapi,
+  SiNginx,
+  SiPostgresql,
 } from "react-icons/si";
 import { GiPineTree } from "react-icons/gi";
 import { FaNodeJs } from "react-icons/fa";
@@ -30,12 +32,6 @@ const techSkills = [
     isNew: false,
     Icon: SiMongodb,
     color: "#47A248",
-  },
-  {
-    name: "Cloudinary",
-    isNew: false,
-    Icon: SiCloudinary,
-    color: "#3448C5",
   },
   {
     name: "Node.js",
@@ -62,22 +58,10 @@ const techSkills = [
     color: "#06B6D4",
   },
   {
-    name: "GitHub",
-    isNew: false,
-    Icon: SiGithub,
-    color: "#FFFFFF",
-  },
-  {
     name: "React Query",
     isNew: false,
     Icon: SiReactquery,
     color: "#FF0000",
-  },
-  {
-    name: "Clerk",
-    isNew: false,
-    Icon: SiClerk,
-    color: "#6C47FF",
   },
   {
     name: "Docker",
@@ -116,12 +100,6 @@ const techSkills = [
     color: "#3178C6",
   },
   {
-    name: "Kubetnates",
-    isNew: true,
-    Icon: SiKubernetes,
-    color: "#3178C6",
-  },
-  {
     name: "Pinecone",
     isNew: true,
     Icon: GiPineTree,
@@ -132,6 +110,18 @@ const techSkills = [
     isNew: true,
     Icon: SiFastapi,
     color: "#47A248",
+  },
+  {
+    name: "Nginx",
+    isNew: true,
+    Icon: SiNginx,
+    color: "#47A248",
+  },
+  {
+    name: "Postgres",
+    isNew: true,
+    Icon: SiPostgresql,
+    color: "#F9FFFF",
   },
 ];
 

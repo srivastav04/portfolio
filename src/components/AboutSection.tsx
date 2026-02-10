@@ -5,6 +5,7 @@ import {
   SiTypescript,
   SiPrisma,
   SiMongodb,
+  SiDocker,
 } from "react-icons/si";
 
 const AboutSection = () => {
@@ -80,6 +81,10 @@ const AboutSection = () => {
                 <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
                   <SiMongodb className="text-4xl text-green-500 mb-3" />
                   <p className="text-gray-300">MongoDB</p>
+                </div>
+                <div className="bg-portfolio-dark/50 backdrop-blur-md border border-portfolio-primary/20 rounded-xl p-6 flex flex-col items-center justify-center hover:scale-105 transition-transform">
+                  <SiDocker className="text-4xl text-blue-500 mb-3" />
+                  <p className="text-gray-300">Docker</p>
                 </div>
               </div>
             </div>
