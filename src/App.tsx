@@ -4,14 +4,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
 import StoriiUpdates from "./components/Storii";
-import { Type } from "lucide-react";
 import TypeWiseUpdates from "./components/Typewise";
 import TrndyUpdates from "./components/Trndy";
 import CreateAI from "./components/CreateAI";
 import AskMe from "./components/AskMe";
-import Backend from "./components/Backend";
+import CreatorHub from "./components/CreatorHub";
 
 const queryClient = new QueryClient();
 
@@ -28,8 +26,7 @@ const App = () => (
           <Route path="/trndy" element={<TrndyUpdates />} />
           <Route path="/createai" element={<CreateAI />} />
           <Route path="/askme" element={<AskMe />} />
-          <Route path="/askme" element={<AskMe />} />
-          <Route path="/backend" element={<Backend />} />
+          <Route path="/creatorhub" element={<CreatorHub />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

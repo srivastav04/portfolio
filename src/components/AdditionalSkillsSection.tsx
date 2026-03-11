@@ -22,6 +22,7 @@ import {
   SiFastapi,
   SiNginx,
   SiPostgresql,
+  SiN8N,
 } from "react-icons/si";
 import { GiPineTree } from "react-icons/gi";
 import { FaNodeJs } from "react-icons/fa";
@@ -65,13 +66,13 @@ const techSkills = [
   },
   {
     name: "Docker",
-    isNew: true,
+    isNew: false,
     Icon: SiDocker,
     color: "#2496ED",
   },
   {
     name: "Langchain",
-    isNew: true,
+    isNew: false,
     Icon: SiLangchain,
     color: "#FFFFFF",
   },
@@ -101,13 +102,13 @@ const techSkills = [
   },
   {
     name: "Pinecone",
-    isNew: true,
+    isNew: false,
     Icon: GiPineTree,
     color: "#3178C6",
   },
   {
     name: "FastAPI",
-    isNew: true,
+    isNew: false,
     Icon: SiFastapi,
     color: "#47A248",
   },
@@ -122,6 +123,12 @@ const techSkills = [
     isNew: true,
     Icon: SiPostgresql,
     color: "#F9FFFF",
+  },
+  {
+    name: "n8n",
+    isNew: true,
+    Icon: SiN8N,
+    color: "#d42323ff",
   },
 ];
 
